@@ -108,11 +108,7 @@ var PusherManager = {
     },
 
     onMessageFromOtherPlayer: function (_msg) {
-        var p = document.createElement('p');
-        p.innerHTML = _msg.msg;
-
-        document.getElementById('output-text').appendChild(p);
-
+        console.log('onMessageFromOtherPlayer', _msg);
     }
 };
 
