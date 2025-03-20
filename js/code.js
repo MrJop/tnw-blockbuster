@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 var GameConnector = {
-    GAME_ENTRY_CODE: 'jop',
-    GAME_ID: "my game name",
+    GAME_ENTRY_CODE: '1234',
+    GAME_ID: "wheelhouseKarateSchool",
 
     init: function() {
         PusherManager.init();
