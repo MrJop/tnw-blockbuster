@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(event) {
     PusherManager.init();
     PusherManager.connectToChannel();
+
+    /////
+
+    document.getElementById('send-button').onclick = function() {
+        PusherManager.sendMessageToChannel({
+            msg: document.getElementById('message-to-send').value,
+            gameID: 123
+        });
+
+        document.getElementById('message-to-send').value = '';
+    }
 });
 
 var PusherManager = {
@@ -28,6 +39,7 @@ var PusherManager = {
     },
 
     onSubScriptionSucceeded: function (_data) {
+        document.getElementById('demo').style.display = 'block';
         this.sUserID = _data.myID+"";
 
         console.log('onSubScriptionSucceeded', _data);
@@ -38,11 +50,11 @@ var PusherManager = {
     },
 
     onMemberAdded: function (_data) {
-
+        console.log('onMemberAdded', _data);
     },
 
     onMemberRemoved: function (_data) {
-
+        console.log('onMemberRemoved', _data);
     },
 
     sendMessageToChannel: function (_msg) {
@@ -50,7 +62,11 @@ var PusherManager = {
     },
 
     onMessageFromOtherPlayer: function (_msg) {
-        console.log('onMessageFromOtherPlayer', _msg);
+        var p = document.createElement('p');
+        p.innerHTML = _msg.msg;
+
+        document.getElementById('output-text').appendChild(p);
+
     }
 };
 

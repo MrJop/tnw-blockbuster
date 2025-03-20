@@ -2,24 +2,19 @@
 <html lang="en">
 <head>
     <title>Pusher Test</title>
-
-    <script>
-/*
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
-        var pusher = new Pusher('34aeee625e438241557b', {
-            cluster: 'eu'
-        });
-
-        var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
-            alert(JSON.stringify(data));
-        });*/
-    </script>
 </head>
 <body>
 <script src="https://js.pusher.com/8.2.0/pusher.min.js"></script>
 <script type="text/javascript" src="js/code.js"></script>
+
+<div id="demo" style="display: none">
+    <input placeholder="Enter your message" id="message-to-send">
+    <button id="send-button">Send</button>
+
+    <div id="output-text">
+        ....
+    </div>
+</div>
+
 </body>
 </html>
